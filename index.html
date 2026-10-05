@@ -1,0 +1,1019 @@
+<!-- 1. Change Text
+<h1 id="title">Hello World</h1>When a button is clicked, change the text to:
+Welcome to JavaScript! -->
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Change Text</title>
+</head>
+<body>
+
+  <h1 id="title">Hello World</h1>
+
+  <button onclick="changeText()">Change Text</button>
+
+  <script>
+    function changeText() {
+      document.getElementById("title").textContent = "Welcome to JavaScript!";
+    }
+  </script>
+
+</body>
+</html> -->
+
+
+<!-- 2. Change Color
+<p id="text">This is some text.</p>
+<button id="btn">Change Color</button>When the button is clicked, change the paragraph's text color to red. -->
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Change Color</title>
+</head>
+<body>
+
+  <p id="text">This is some text.</p>
+
+  <button onclick="changeColor()">Change Color</button>
+
+  <script>
+    function changeColor() {
+      document.getElementById("text").style.color = "red";
+    }
+  </script>
+
+</body>
+</html> -->
+
+
+<!-- 3. Change Multiple Properties
+Create a button that changes a <div> so that:
+background becomes blacktext becomes whitefont size becomes 24pxtext becomes "JavaScript is awesome!" -->
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Change Multiple Properties</title>
+</head>
+<body>
+
+  <div id="box">Hello</div>
+
+  <button onclick="changeBox()">Change</button>
+
+  <script>
+    function changeBox() {
+      const box = document.getElementById("box");
+
+      box.style.backgroundColor = "black";
+      box.style.color = "white";
+      box.style.fontSize = "24px";
+      box.textContent = "JavaScript is awesome!";
+    }
+  </script>
+
+</body>
+</html> -->
+
+
+<!-- 4. Counter
+Create:
+0
+[ + ]
+[ - ]Requirements:
++ increases the number by 1- decreases the number by 1The number should be displayed inside an HTML element. -->
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Counter</title>
+</head>
+<body>
+
+  <h1 id="number">0</h1>
+
+  <button onclick="increase()">+</button>
+  <button onclick="decrease()">-</button>
+
+  <script>
+    let count = 0;
+
+    function increase() {
+      count++;
+      document.getElementById("number").textContent = count;
+    }
+
+    function decrease() {
+      count--;
+      document.getElementById("number").textContent = count;
+    }
+  </script>
+
+</body>
+</html> -->
+
+
+<!-- 5. Show / Hide
+Create:
+<p id="message">You can see me!</p>
+<button>Hide</button>
+<button>Show</button>Make the buttons hide and show the paragraph. -->
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Show / Hide</title>
+</head>
+<body>
+
+  <p id="message">You can see me!</p>
+
+  <button onclick="hideMessage()">Hide</button>
+  <button onclick="showMessage()">Show</button>
+
+  <script>
+    function hideMessage() {
+      document.getElementById("message").style.display = "none";
+    }
+
+    function showMessage() {
+      document.getElementById("message").style.display = "block";
+    }
+  </script>
+
+</body>
+</html> -->
+
+
+<!-- 6. Toggle Text
+Create a button:
+[ Show details ]When clicked:
+if the text is hidden → show itif the text is visible → hide itThe button text should also change between:
+Show details
+Hide details -->
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Toggle Text</title>
+</head>
+<body>
+
+  <p id="details" style="display: none;">
+    Here are the details.
+  </p>
+
+  <button id="btn" onclick="toggleDetails()">Show details</button>
+
+  <script>
+    function toggleDetails() {
+      const details = document.getElementById("details");
+      const button = document.getElementById("btn");
+
+      if (details.style.display === "none") {
+        details.style.display = "block";
+        button.textContent = "Hide details";
+      } else {
+        details.style.display = "none";
+        button.textContent = "Show details";
+      }
+    }
+  </script>
+
+</body>
+</html> -->
+
+
+<!-- 7. Greeting
+Create:
+Name: [____________]
+[ Greet ]
+Hello, Aram!When the user enters a name and clicks the button, display:
+Hello, NAME! -->
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Greeting</title>
+</head>
+<body>
+
+  <label>
+    Name:
+    <input type="text" id="name">
+  </label>
+
+  <button onclick="greetUser()">Greet</button>
+
+  <p id="result"></p>
+
+  <script>
+    function greetUser() {
+      const name = document.getElementById("name").value;
+
+      document.getElementById("result").textContent = `Hello, ${name}!`;
+    }
+  </script>
+
+</body>
+</html> -->
+
+
+<!-- 8. Character Counter
+Create a textarea and display:
+Characters: 0Update the counter every time the user types.
+Example:
+Hello
+Characters: 5 -->
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Character Counter</title>
+</head>
+<body>
+
+  <textarea id="text" oninput="countCharacters()"></textarea>
+
+  <p id="counter">Characters: 0</p>
+
+  <script>
+    function countCharacters() {
+      const text = document.getElementById("text").value;
+
+      document.getElementById("counter").textContent =
+        `Characters: ${text.length}`;
+    }
+  </script>
+
+</body>
+</html> -->
+
+
+<!-- 9. Live Preview
+Create:
+Enter your name:
+[____________]
+Preview:
+Hello, __!The preview should update while the user is typing, without pressing a button. -->
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Live Preview</title>
+</head>
+<body>
+
+  <label>
+    Enter your name:
+    <input type="text" id="name" oninput="showPreview()">
+  </label>
+
+  <p id="preview">Preview: Hello, __!</p>
+
+  <script>
+    function showPreview() {
+      const name = document.getElementById("name").value;
+
+      document.getElementById("preview").textContent =
+        `Preview: Hello, ${name}!`;
+    }
+  </script>
+
+</body>
+</html> -->
+
+
+<!-- 10. Add Items to a List
+Create:
+Item: [____________] [Add]
+Shopping List
+- Milk
+- Bread
+- EggsWhen the user enters an item and clicks Add, create a new <li> and add it to the list. -->
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Shopping List</title>
+</head>
+<body>
+
+  <label>
+    Item:
+    <input type="text" id="item">
+  </label>
+
+  <button onclick="addItem()">Add</button>
+
+  <h2>Shopping List</h2>
+
+  <ul id="shoppingList">
+    <li>Milk</li>
+    <li>Bread</li>
+    <li>Eggs</li>
+  </ul>
+
+  <script>
+    function addItem() {
+      const item = document.getElementById("item").value;
+
+      const li = document.createElement("li");
+      li.textContent = item;
+
+      document.getElementById("shoppingList").appendChild(li);
+
+      document.getElementById("item").value = "";
+    }
+  </script>
+
+</body>
+</html> -->
+
+
+
+<!-- 11. Add and Remove
+Extend the previous exercise.
+Each item should have a Delete button:
+- Milk     [Delete]
+- Bread    [Delete]
+- Eggs     [Delete]Clicking Delete removes that item. -->
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Add and Remove</title>
+</head>
+<body>
+
+  <label>
+    Item:
+    <input type="text" id="item">
+  </label>
+
+  <button onclick="addItem()">Add</button>
+
+  <h2>Shopping List</h2>
+
+  <ul id="shoppingList">
+    <li>
+      Milk
+      <button onclick="deleteItem(this)">Delete</button>
+    </li>
+
+    <li>
+      Bread
+      <button onclick="deleteItem(this)">Delete</button>
+    </li>
+
+    <li>
+      Eggs
+      <button onclick="deleteItem(this)">Delete</button>
+    </li>
+  </ul>
+
+  <script>
+    function addItem() {
+      const item = document.getElementById("item").value;
+
+      const li = document.createElement("li");
+      li.textContent = item + " ";
+
+      const button = document.createElement("button");
+      button.textContent = "Delete";
+      button.onclick = function () {
+        deleteItem(button);
+      };
+
+      li.appendChild(button);
+
+      document.getElementById("shoppingList").appendChild(li);
+
+      document.getElementById("item").value = "";
+    }
+
+    function deleteItem(button) {
+      button.parentElement.remove();
+    }
+  </script>
+
+</body>
+</html> -->
+
+
+<!-- 12. Create Cards
+Create an input and button:
+Name: [__________]
+Age:  [__________]
+[Create]When clicked, dynamically create a card:
+┌─────────────────┐
+│ Aram            │
+│ Age: 22         │
+└─────────────────┘Each card should be created using JavaScript. -->
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Create Cards</title>
+
+  <style>
+    .card {
+      width: 200px;
+      padding: 15px;
+      margin-top: 10px;
+      border: 1px solid black;
+      border-radius: 8px;
+    }
+  </style>
+</head>
+<body>
+
+  <label>
+    Name:
+    <input type="text" id="name">
+  </label>
+
+  <br><br>
+
+  <label>
+    Age:
+    <input type="number" id="age">
+  </label>
+
+  <br><br>
+
+  <button onclick="createCard()">Create</button>
+
+  <div id="cards"></div>
+
+  <script>
+    function createCard() {
+      const name = document.getElementById("name").value;
+      const age = document.getElementById("age").value;
+
+      const card = document.createElement("div");
+      card.className = "card";
+
+      const nameElement = document.createElement("h3");
+      nameElement.textContent = name;
+
+      const ageElement = document.createElement("p");
+      ageElement.textContent = `Age: ${age}`;
+
+      card.appendChild(nameElement);
+      card.appendChild(ageElement);
+
+      document.getElementById("cards").appendChild(card);
+
+      document.getElementById("name").value = "";
+      document.getElementById("age").value = "";
+    }
+  </script>
+
+</body>
+</html> -->
+
+
+<!-- 13. Password Checker
+Create:
+Password: [____________]
+[Check]
+Password is too shortRules:
+fewer than 6 characters → "Password is too short"6–9 characters → "Password is acceptable"10+ characters → "Strong password"Change the message color depending on the result. -->
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Password Checker</title>
+</head>
+<body>
+
+  <label>
+    Password:
+    <input type="password" id="password">
+  </label>
+
+  <button onclick="checkPassword()">Check</button>
+
+  <p id="message"></p>
+
+  <script>
+    function checkPassword() {
+      const password = document.getElementById("password").value;
+      const message = document.getElementById("message");
+
+      if (password.length < 6) {
+        message.textContent = "Password is too short";
+        message.style.color = "red";
+
+      } else if (password.length <= 9) {
+        message.textContent = "Password is acceptable";
+        message.style.color = "orange";
+
+      } else {
+        message.textContent = "Strong password";
+        message.style.color = "green";
+      }
+    }
+  </script>
+
+</body>
+</html> -->
+
+
+<!-- 14. Age Checker
+Create an input for age.
+When the user clicks a button:
+under 18 → "You are a minor"18–64 → "You are an adult"65+ → "You are a senior" -->
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Age Checker</title>
+</head>
+<body>
+
+  <label>
+    Age:
+    <input type="number" id="age">
+  </label>
+
+  <button onclick="checkAge()">Check</button>
+
+  <p id="result"></p>
+
+  <script>
+    function checkAge() {
+      const age = Number(document.getElementById("age").value);
+      const result = document.getElementById("result");
+
+      if (age < 18) {
+        result.textContent = "You are a minor";
+      } else if (age <= 64) {
+        result.textContent = "You are an adult";
+      } else {
+        result.textContent = "You are a senior";
+      }
+    }
+  </script>
+
+</body>
+</html> -->
+
+
+<!-- 15. Dark Mode
+Create:
+My Website
+This is my website.
+[Dark Mode]When clicked:
+page background becomes darktext becomes lightClicking again should return to the normal mode.
+Hint: Use classList.toggle(). -->
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Dark Mode</title>
+
+  <style>
+    .dark {
+      background-color: black;
+      color: white;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>My Website</h1>
+
+  <p>This is my website.</p>
+
+  <button onclick="changeMode()">Dark Mode</button>
+
+  <script>
+    function changeMode() {
+      document.body.classList.toggle("dark");
+    }
+  </script>
+
+</body>
+</html> -->
+
+
+<!-- 16. Todo List
+Build a Todo application:
+Task: [________________] [Add]
+☐ Learn JavaScript       [Delete]
+☑ Learn HTML             [Delete]
+☐ Practice DOM           [Delete]Requirements:
+add tasksdelete tasksclick a task to mark it completedcompleted tasks should look differentprevent adding an empty task -->
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Todo List</title>
+
+  <style>
+    .completed {
+      text-decoration: line-through;
+      color: gray;
+    }
+
+    li {
+      margin: 10px 0;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>Todo List</h2>
+
+  <label>
+    Task:
+    <input type="text" id="taskInput">
+  </label>
+
+  <button onclick="addTask()">Add</button>
+
+  <ul id="todoList">
+    <li>
+      <span onclick="toggleTask(this)">☐ Learn JavaScript</span>
+      <button onclick="deleteTask(this)">Delete</button>
+    </li>
+
+    <li>
+      <span class="completed" onclick="toggleTask(this)">
+        ☑ Learn HTML
+      </span>
+      <button onclick="deleteTask(this)">Delete</button>
+    </li>
+
+    <li>
+      <span onclick="toggleTask(this)">☐ Practice DOM</span>
+      <button onclick="deleteTask(this)">Delete</button>
+    </li>
+  </ul>
+
+  <script>
+    function addTask() {
+      const input = document.getElementById("taskInput");
+      const task = input.value.trim();
+
+      if (task === "") {
+        return;
+      }
+
+      const li = document.createElement("li");
+
+      const span = document.createElement("span");
+      span.textContent = "☐ " + task;
+
+      span.onclick = function () {
+        toggleTask(span);
+      };
+
+      const button = document.createElement("button");
+      button.textContent = "Delete";
+
+      button.onclick = function () {
+        deleteTask(button);
+      };
+
+      li.appendChild(span);
+      li.appendChild(button);
+
+      document.getElementById("todoList").appendChild(li);
+
+      input.value = "";
+    }
+
+    function deleteTask(button) {
+      button.parentElement.remove();
+    }
+
+    function toggleTask(task) {
+      task.classList.toggle("completed");
+
+      if (task.classList.contains("completed")) {
+        task.textContent = task.textContent.replace("☐", "☑");
+      } else {
+        task.textContent = task.textContent.replace("☑", "☐");
+      }
+    }
+  </script>
+
+</body>
+</html> -->
+
+
+<!-- 17. Simple Calculator
+Create:
+Number 1: [____]
+Operator: [ + ▼ ]
+Number 2: [____]
+
+[Calculate]
+
+Result: 15Support:
++
+-
+*
+/ -->
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Simple Calculator</title>
+</head>
+<body>
+
+  <label>
+    Number 1:
+    <input type="number" id="num1">
+  </label>
+
+  <br><br>
+
+  <label>
+    Operator:
+    <select id="operator">
+      <option value="+">+</option>
+      <option value="-">-</option>
+      <option value="*">*</option>
+      <option value="/">/</option>
+    </select>
+  </label>
+
+  <br><br>
+
+  <label>
+    Number 2:
+    <input type="number" id="num2">
+  </label>
+
+  <br><br>
+
+  <button onclick="calculate()">Calculate</button>
+
+  <p id="result">Result:</p>
+
+  <script>
+    function calculate() {
+      const num1 = Number(document.getElementById("num1").value);
+      const num2 = Number(document.getElementById("num2").value);
+      const operator = document.getElementById("operator").value;
+
+      let result;
+
+      if (operator === "+") {
+        result = num1 + num2;
+      } else if (operator === "-") {
+        result = num1 - num2;
+      } else if (operator === "*") {
+        result = num1 * num2;
+      }else if (operator === "/") {
+        result = num1 / num2;
+      }
+
+      document.getElementById("result").textContent =
+        `Result: ${result}`;
+    }
+  </script>
+
+</body>
+</html> -->
+
+
+<!-- 19. Simple Form Validation
+Create a registration form:
+Name:     [____________]
+Email:    [____________]
+Password: [____________]
+[Register]Validation:
+name cannot be emptyemail cannot be emptypassword must contain at least 8 charactersDisplay an error message next to each invalid field. -->
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Simple Form Validation</title>
+
+  <style>
+    .error {
+      color: red;
+      margin-left: 10px;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>Registration Form</h2>
+
+  <label>
+    Name:
+    <input type="text" id="name">
+    <span id="nameError" class="error"></span>
+  </label>
+
+  <br><br>
+
+  <label>
+    Email:
+    <input type="email" id="email">
+    <span id="emailError" class="error"></span>
+  </label>
+
+  <br><br>
+
+  <label>
+    Password:
+    <input type="password" id="password">
+    <span id="passwordError" class="error"></span>
+  </label>
+
+  <br><br>
+
+  <button onclick="validateForm()">Register</button>
+
+  <script>
+    function validateForm() {
+      const name = document.getElementById("name").value.trim();
+      const email = document.getElementById("email").value.trim();
+      const password = document.getElementById("password").value;
+
+      const nameError = document.getElementById("nameError");
+      const emailError = document.getElementById("emailError");
+      const passwordError = document.getElementById("passwordError");
+
+      nameError.textContent = "";
+      emailError.textContent = "";
+      passwordError.textContent = "";
+
+      if (name === "") {
+        nameError.textContent = "Name cannot be empty";
+      }
+
+      if (email === "") {
+        emailError.textContent = "Email cannot be empty";
+      }
+
+      if (password.length < 8) {
+        passwordError.textContent =
+          "Password must contain at least 8 characters";
+      }
+    }
+  </script>
+
+</body>
+</html> -->
+
+
+<!-- 20. Student Manager
+Build a small application where the user can add students.
+Form:
+Name:  [___________]
+Age:   [___________]
+Course:[___________]
+[Add Student]Display students as cards:
+┌────────────────────┐
+│ Aram                │
+│ Age: 21             │
+│ Course: JavaScript  │
+│                     │
+│ [Delete]            │
+└────────────────────┘Requirements:
+add studentsdelete studentsshow the total number of studentsprevent empty fieldsuse createElement()use append() / appendChild()use addEventListener()use 
+classListuse DOM properties such as textContent and value -->
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Student Manager</title>
+
+  <style>
+    .student-card {
+      width: 220px;
+      border: 1px solid black;
+      border-radius: 8px;
+      padding: 15px;
+      margin-top: 10px;
+    }
+
+    .student-card h3 {
+      margin: 0 0 10px;
+    }
+
+    .delete-btn {
+      margin-top: 10px;
+    }
+
+    .error {
+      color: red;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Student Manager</h1>
+
+  <label>
+    Name:
+    <input type="text" id="name">
+  </label>
+
+  <br><br>
+
+  <label>
+    Age:
+    <input type="number" id="age">
+  </label>
+
+  <br><br>
+
+  <label>
+    Course:
+    <input type="text" id="course">
+  </label>
+
+  <br><br>
+
+  <button id="addBtn">Add Student</button>
+
+  <p id="error" class="error"></p>
+
+  <h2>
+    Total Students:
+    <span id="total">0</span>
+  </h2>
+
+  <div id="students"></div>
+
+  <script>
+    const nameInput = document.getElementById("name");
+    const ageInput = document.getElementById("age");
+    const courseInput = document.getElementById("course");
+
+    const addBtn = document.getElementById("addBtn");
+    const students = document.getElementById("students");
+    const total = document.getElementById("total");
+    const error = document.getElementById("error");
+
+    let studentCount = 0;
+
+    addBtn.addEventListener("click", function () {
+      const name = nameInput.value.trim();
+      const age = ageInput.value.trim();
+      const course = courseInput.value.trim();
+
+      if (name === "" || age === "" || course === "") {
+        error.textContent = "Please fill in all fields.";
+        return;
+      }
+
+      error.textContent = "";
+
+      const card = document.createElement("div");
+      card.classList.add("student-card");
+
+      const studentName = document.createElement("h3");
+      studentName.textContent = name;
+
+      const studentAge = document.createElement("p");
+      studentAge.textContent = `Age: ${age}`;
+
+      const studentCourse = document.createElement("p");
+      studentCourse.textContent = `Course: ${course}`;
+
+      const deleteBtn = document.createElement("button");
+      deleteBtn.textContent = "Delete";
+      deleteBtn.classList.add("delete-btn");
+
+      deleteBtn.addEventListener("click", function () {
+        card.remove();
+
+        studentCount--;
+
+        total.textContent = studentCount;
+      });
+
+      card.append(
+        studentName,
+        studentAge,
+        studentCourse,
+        deleteBtn
+      );
+
+      students.appendChild(card);
+
+      studentCount++;
+
+      total.textContent = studentCount;
+
+      nameInput.value = "";
+      ageInput.value = "";
+      courseInput.value = "";
+    });
+  </script>
+
+</body>
+</html> -->
